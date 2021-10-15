@@ -10,6 +10,7 @@ import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from './app-routing.module';
 import {BucketBrowserComponent} from './components/bucket/bucket-browser/bucket-browser.component';
 import {BucketPickerComponent} from './components/bucket/bucket-picker/bucket-picker.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {BucketPickerComponent} from './components/bucket/bucket-picker/bucket-pi
     BrowserAnimationsModule,
     MatToolbarModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
