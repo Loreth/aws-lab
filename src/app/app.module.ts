@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {BucketBrowserComponent} from './components/bucket/bucket-browser/bucket-browser.component';
 import {BucketPickerComponent} from './components/bucket/bucket-picker/bucket-picker.component';
 import {HttpClientModule} from "@angular/common/http";
+import { Ec2BrowserComponent } from './components/ec2/ec2-browser/ec2-browser.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from "@angular/common/http";
     AdminPanelComponent,
     HeaderComponent,
     BucketBrowserComponent,
-    BucketPickerComponent
+    BucketPickerComponent,
+    Ec2BrowserComponent
   ],
   imports: [
     BrowserModule,
