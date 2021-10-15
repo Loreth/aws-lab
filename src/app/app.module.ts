@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {BucketBrowserComponent} from './components/bucket/bucket-browser/bucket-browser.component';
 import {BucketPickerComponent} from './components/bucket/bucket-picker/bucket-picker.component';
 import {HttpClientModule} from "@angular/common/http";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -20,14 +21,15 @@ import {HttpClientModule} from "@angular/common/http";
     BucketBrowserComponent,
     BucketPickerComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    RouterModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        RouterModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatTableModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
