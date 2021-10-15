@@ -8,12 +8,16 @@ import {HeaderComponent} from './core/header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from './app-routing.module';
+import {BucketBrowserComponent} from './components/bucket/bucket-browser/bucket-browser.component';
+import {BucketPickerComponent} from './components/bucket/bucket-picker/bucket-picker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminPanelComponent,
-    HeaderComponent
+    HeaderComponent,
+    BucketBrowserComponent,
+    BucketPickerComponent
   ],
   imports: [
     BrowserModule,
