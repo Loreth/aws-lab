@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {from, Observable} from "rxjs";
+import {Observable} from "rxjs";
+import {Bucket} from "../../../shared/model/bucket";
+import {BucketService} from "../../../core/services/bucket.service";
 
 @Component({
   selector: 'app-bucket-picker',
@@ -7,12 +9,12 @@ import {from, Observable} from "rxjs";
   styleUrls: ['./bucket-picker.component.css']
 })
 export class BucketPickerComponent implements OnInit {
-  buckets$: Observable<any>;
+  buckets$!: Observable<Bucket[]>;
 
-  constructor() {
-    this.buckets$ = from([])
+  constructor(private bucketService: BucketService) {
   }
 
   ngOnInit(): void {
+    this.buckets$ = this.bucketService.getBuckets();
   }
 }
