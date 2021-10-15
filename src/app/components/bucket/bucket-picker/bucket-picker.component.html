@@ -1,1 +1,6 @@
 <p>bucket-picker works!</p>
+<div *ngIf="buckets$ | async as buckets">
+  <div *ngFor="let bucket in buckets.Buckets">
+    {{bucket}}
+  </div>
+</div>
