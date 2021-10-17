@@ -5,20 +5,6 @@
   <h3>Zawartość bucketa:</h3>
   <ng-container *ngIf="s3Objects$ | async as s3Objects">
     <table mat-table [dataSource]="s3Objects" class="mat-elevation-z4 s3object-table">
-      <ng-container matColumnDef="selected">
-        <mat-header-cell *matHeaderCellDef>
-          <mat-checkbox (change)="$event ? masterSelectionToggle(s3Objects) : null"
-                        [checked]="selectedS3Objects.hasValue() && areAllRowsSelected()"
-                        [indeterminate]="selectedS3Objects.hasValue() && !areAllRowsSelected()">
-          </mat-checkbox>
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row">
-          <mat-checkbox (click)="$event.stopPropagation()"
-                        (change)="$event ? selectedS3Objects.toggle(row) : null"
-                        [checked]="selectedS3Objects.isSelected(row)">
-          </mat-checkbox>
-        </mat-cell>
-      </ng-container>
 
       <ng-container matColumnDef="no">
         <mat-header-cell *matHeaderCellDef>Nr</mat-header-cell>
@@ -40,10 +26,15 @@
         <mat-cell *matCellDef="let element">{{element.lastModified}}</mat-cell>
       </ng-container>
 
+      <ng-container matColumnDef="download">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a mat-raised-button color="primary" download="{{element.key}}" href="{{element.presignedUrl}}">Pobierz</a>
+        </mat-cell>
+      </ng-container>
+
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row matRipple
-          *matRowDef="let row; columns: displayedColumns;"
-          (click)="onS3ObjectClicked(row)"></mat-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </table>
   </ng-container>
 </div>
