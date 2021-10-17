@@ -21,6 +21,11 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonModule} from "@angular/material/button";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {MatIconModule} from "@angular/material/icon";
+
 
 @NgModule({
   declarations: [
@@ -47,6 +52,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    MatSidenavModule,
     MatSnackBarModule
   ],
   providers: [],

@@ -5,3 +5,7 @@ header {
   top: 0;
   z-index: 2;
 }
+
+.toolbar {
+  justify-content: space-between;
+}
