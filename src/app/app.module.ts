@@ -15,6 +15,9 @@ import {MatTableModule} from "@angular/material/table";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRippleModule} from "@angular/material/core";
 import {MatButtonModule} from "@angular/material/button";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -24,18 +27,21 @@ import {MatButtonModule} from "@angular/material/button";
     BucketBrowserComponent,
     BucketPickerComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        RouterModule,
-        AppRoutingModule,
-        HttpClientModule,
-        MatTableModule,
-        MatCheckboxModule,
-        MatRippleModule,
-        MatButtonModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    RouterModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatRippleModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
