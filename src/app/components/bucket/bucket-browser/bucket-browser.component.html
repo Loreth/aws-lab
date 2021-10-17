@@ -1,1 +1,49 @@
-<app-bucket-picker></app-bucket-picker>
+<h3>Wybór bucketa:</h3>
+<app-bucket-picker (selectedBucket)="onBucketSelected($event)"></app-bucket-picker>
+
+<div *ngIf="selectedBucket" class="bucket-objects-panel">
+  <h3>Zawartość bucketa:</h3>
+  <ng-container *ngIf="s3Objects$ | async as s3Objects">
+    <table mat-table [dataSource]="s3Objects" class="mat-elevation-z4 s3object-table">
+      <ng-container matColumnDef="selected">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterSelectionToggle(s3Objects) : null"
+                        [checked]="selectedS3Objects.hasValue() && areAllRowsSelected()"
+                        [indeterminate]="selectedS3Objects.hasValue() && !areAllRowsSelected()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selectedS3Objects.toggle(row) : null"
+                        [checked]="selectedS3Objects.isSelected(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="no">
+        <mat-header-cell *matHeaderCellDef>Nr</mat-header-cell>
+        <mat-cell *matCellDef="let i = index">{{i + 1}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="key">
+        <mat-header-cell *matHeaderCellDef>Klucz pliku</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.key}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="size">
+        <mat-header-cell *matHeaderCellDef>Rozmiar [KB]</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.size / 1024 | number: '1.2-2'}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="lastModified">
+        <mat-header-cell *matHeaderCellDef>Data modyfikacji</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.lastModified}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row matRipple
+          *matRowDef="let row; columns: displayedColumns;"
+          (click)="onS3ObjectClicked(row)"></mat-row>
+    </table>
+  </ng-container>
+</div>

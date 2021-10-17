@@ -1,14 +1,4 @@
 <div *ngIf="buckets$ | async as buckets">
-  <!--  <mat-list>-->
-  <!--    <mat-list-item>-->
-  <!--      <span class="column">Nazwa</span>-->
-  <!--      <span class="column">Data utworzenia</span>-->
-  <!--    </mat-list-item>-->
-  <!--    <mat-list-item *ngFor="let bucket of buckets">-->
-  <!--      <span class="column">{{bucket.name}} </span>-->
-  <!--      <span class="column">{{bucket.creationDate}}</span>-->
-  <!--    </mat-list-item>-->
-  <!--  </mat-list>-->
   <table mat-table [dataSource]="buckets" class="mat-elevation-z2 bucket-table">
     <ng-container matColumnDef="no">
       <th mat-header-cell *matHeaderCellDef>Nr</th>
@@ -27,9 +17,8 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row
-        (click)="onSelectBucket(row)"
+        (click)="onBucketSelected(row)"
         [class.selected-bucket-row]="highlightedBucketName === row.name"
         *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-
 </div>

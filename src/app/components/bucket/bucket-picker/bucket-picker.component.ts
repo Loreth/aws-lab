@@ -21,7 +21,7 @@ export class BucketPickerComponent implements OnInit {
     this.buckets$ = this.bucketService.getBuckets();
   }
 
-  onSelectBucket(bucket: Bucket) {
+  onBucketSelected(bucket: Bucket) {
     this.highlightedBucketName = bucket.name
     this.selectedBucket.emit(bucket);
   }

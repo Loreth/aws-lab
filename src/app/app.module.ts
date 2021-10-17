@@ -12,6 +12,8 @@ import {BucketBrowserComponent} from './components/bucket/bucket-browser/bucket-
 import {BucketPickerComponent} from './components/bucket/bucket-picker/bucket-picker.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatRippleModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {MatTableModule} from "@angular/material/table";
         RouterModule,
         AppRoutingModule,
         HttpClientModule,
-        MatTableModule
+        MatTableModule,
+        MatCheckboxModule,
+        MatRippleModule
     ],
   providers: [],
   bootstrap: [AppComponent]

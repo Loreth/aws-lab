@@ -1,0 +1,15 @@
+.s3object-table {
+  width: 100%;
+}
+
+.mat-row .mat-cell {
+  cursor: pointer;
+}
+
+.bucket-objects-panel {
+  margin-top: 16px;
+}
+
+.mat-row:hover .mat-cell {
+  background-color: rgba(0, 0, 0, 0.05);
+}
