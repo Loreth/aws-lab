@@ -38,8 +38,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     BucketBrowserComponent,
     BucketPickerComponent,
     BucketArchiveComponent,
-    Ec2BrowserComponent,
     Ec2InstanceComponent,
+    Ec2BrowserComponent,
     Ec2InstanceCreatorComponent
   ],
   imports: [
@@ -60,8 +60,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatButtonModule,
     MatSidenavModule,
     MatSnackBarModule,
-    MatCardModule,
     MatFormFieldModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

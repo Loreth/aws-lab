@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router'
 import {AdminPanelComponent} from "./components/admin-panel/admin-panel.component";
 import {BucketBrowserComponent} from "./components/bucket/bucket-browser/bucket-browser.component";
 import {BucketArchiveComponent} from './components/bucket/bucket-archive/bucket-archive.component';
-import {Ec2BrowserComponent} from "./components/ec2/ec2-browser/ec2-browser.component";
+import {Ec2BrowserComponent} from './components/ec2/ec2-browser/ec2-browser.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'admin-panel', pathMatch: 'full'},
