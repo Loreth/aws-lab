@@ -8,9 +8,8 @@
     <p>instance image id: {{instance.imageId}}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button>stop</button>
-    <button>start</button>
-    <button>terminate</button>
-    <button>reboot</button>
+    <button (click)="emitStopInstance()">stop</button>
+    <button (click)="emitStartInstance()">start</button>
+    <button (click)="emitTerminateInstance()">terminate</button>
   </mat-card-actions>
 </mat-card>

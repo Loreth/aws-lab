@@ -7,11 +7,11 @@ export interface Ec2InstanceResponse {
 }
 
 export class Ec2Instance {
-  id: string;
-  name: string | undefined;
-  imageId: string;
-  type: string;
-  state: string;
+  readonly id: string;
+  readonly name: string | undefined;
+  readonly imageId: string;
+  readonly type: string;
+  readonly state: string;
 
   constructor(response: Ec2InstanceResponse) {
     this.id = response.id;
