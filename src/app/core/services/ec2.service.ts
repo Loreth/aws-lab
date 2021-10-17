@@ -19,41 +19,35 @@ export class Ec2Service {
   constructor(private http: HttpClient) { }
 
   getInstances(): Observable<Ec2Instance[]> {
-    console.log("hello from get instances!");
+    const url = `${getEndpointUrl(EC2)}/`
 
-    return this.http.get<Ec2InstanceResponse[]>(getEndpointUrl(EC2)).pipe(
+    return this.http.get<Ec2InstanceResponse[]>(url).pipe(
       map(responses => responses.map(response => new Ec2Instance(response)))
     );
 
   }
 
-  createInstance(request: Ec2CreateRequest): Observable<string> {
-    console.log("hello from createInstance!");
-
+  createInstance(request: Ec2CreateRequest): Observable<Ec2Instance> {
     const url = `${getEndpointUrl(EC2)}/create`;
 
-    return this.http.post<string>(url, request);
+    return this.http.post<Ec2InstanceResponse>(url, request).pipe(
+      map(response => new Ec2Instance(response))
+    );
   }
 
   stopInstance(request: Ec2StopRequest): Observable<void> {
-    console.log("hello from stop instance!");
-
     const url = `${getEndpointUrl(EC2)}/stop`;
 
     return this.http.post<void>(url, request);
   }
 
   startInstance(request: Ec2StartRequest): Observable<void> {
-    console.log("hello from start instance!");
-
     const url = `${getEndpointUrl(EC2)}/start`;
 
     return this.http.post<void>(url, request);
   }
 
   terminateInstance(request: Ec2TerminateRequest): Observable<void> {
-    console.log("hello terminate instance!");
-
     const url = `${getEndpointUrl(EC2)}/terminate`;
 
     return this.http.post<void>(url, request);

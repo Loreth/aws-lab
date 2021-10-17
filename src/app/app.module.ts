@@ -14,6 +14,11 @@ import {HttpClientModule} from "@angular/common/http";
 import { Ec2BrowserComponent } from './components/ec2/ec2-browser/ec2-browser.component';
 import { Ec2InstanceComponent } from './components/ec2/ec2-instance/ec2-instance.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import { Ec2InstanceCreatorComponent } from './components/ec2/ec2-instance-creator/ec2-instance-creator.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,7 +28,8 @@ import {MatCardModule} from "@angular/material/card";
     BucketBrowserComponent,
     BucketPickerComponent,
     Ec2BrowserComponent,
-    Ec2InstanceComponent
+    Ec2InstanceComponent,
+    Ec2InstanceCreatorComponent
   ],
     imports: [
         BrowserModule,
@@ -32,7 +38,11 @@ import {MatCardModule} from "@angular/material/card";
         RouterModule,
         AppRoutingModule,
         HttpClientModule,
-        MatCardModule
+        MatCardModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
