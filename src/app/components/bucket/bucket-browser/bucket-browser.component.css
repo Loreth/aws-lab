@@ -2,14 +2,23 @@
   width: 100%;
 }
 
-.mat-row .mat-cell {
-  cursor: pointer;
-}
-
 .bucket-objects-panel {
   margin-top: 16px;
 }
 
-.mat-row:hover .mat-cell {
-  background-color: rgba(0, 0, 0, 0.05);
+.mat-column-no {
+  flex: 0 0 80px
 }
+
+.mat-column-size {
+  flex: 0 0 15%
+}
+
+.mat-column-lastModified {
+  flex: 0 0 220px
+}
+
+.mat-column-download {
+  flex: 0 0 80px;
+}
+

@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRippleModule} from "@angular/material/core";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatRippleModule} from "@angular/material/core";
         HttpClientModule,
         MatTableModule,
         MatCheckboxModule,
-        MatRippleModule
+        MatRippleModule,
+        MatButtonModule
     ],
   providers: [],
   bootstrap: [AppComponent]
