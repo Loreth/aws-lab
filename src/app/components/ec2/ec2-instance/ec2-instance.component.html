@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title-group>
+    <mat-card-title>{{instance.name}}</mat-card-title>
+    <mat-card-subtitle>{{instance.id}}</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <p>instance type: {{instance.type}}</p>
+    <p>instance image id: {{instance.imageId}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button>stop</button>
+    <button>start</button>
+    <button>terminate</button>
+    <button>reboot</button>
+  </mat-card-actions>
+</mat-card>

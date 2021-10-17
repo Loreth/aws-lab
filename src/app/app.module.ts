@@ -12,6 +12,8 @@ import {BucketBrowserComponent} from './components/bucket/bucket-browser/bucket-
 import {BucketPickerComponent} from './components/bucket/bucket-picker/bucket-picker.component';
 import {HttpClientModule} from "@angular/common/http";
 import { Ec2BrowserComponent } from './components/ec2/ec2-browser/ec2-browser.component';
+import { Ec2InstanceComponent } from './components/ec2/ec2-instance/ec2-instance.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -20,16 +22,18 @@ import { Ec2BrowserComponent } from './components/ec2/ec2-browser/ec2-browser.co
     HeaderComponent,
     BucketBrowserComponent,
     BucketPickerComponent,
-    Ec2BrowserComponent
+    Ec2BrowserComponent,
+    Ec2InstanceComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    RouterModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        RouterModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatCardModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

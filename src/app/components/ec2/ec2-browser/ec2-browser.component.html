@@ -1,1 +1,2 @@
-<p>ec2-browser works!</p>
+<h1>EC2 instances</h1>
+<app-ec2-instance *ngFor="let instance of (instances$ | async)" [instance]="instance"></app-ec2-instance>
