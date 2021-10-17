@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRippleModule} from "@angular/material/core";
+import { BucketArchiveComponent } from './components/bucket/bucket-archive/bucket-archive.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MatRippleModule} from "@angular/material/core";
     AdminPanelComponent,
     HeaderComponent,
     BucketBrowserComponent,
-    BucketPickerComponent
+    BucketPickerComponent,
+    BucketArchiveComponent
   ],
     imports: [
         BrowserModule,
