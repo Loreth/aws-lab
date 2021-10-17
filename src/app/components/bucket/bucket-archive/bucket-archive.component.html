@@ -1,1 +1,23 @@
-<p>bucket-archive works!</p>
+<h3>Wybór bucketa:</h3>
+<app-bucket-picker (selectedBucket)="onBucketSelected($event)"></app-bucket-picker>
+
+<div class="file-picker">
+  <h3>Wybierz pliki:</h3>
+  <div class="file-picker-header">
+    <input type="file" multiple (change)="onFileSelected($event)" [(ngModel)]="files">
+    <button mat-raised-button *ngIf="filesToUpload.length>0 && this.selectedBucket" (click)="saveFiles()">Prześlij</button>
+  </div>
+
+  <div *ngIf="filesToUpload">
+    <mat-list>
+      <div *ngFor="let fileType of filesByType">
+        <div mat-subheader>{{fileType[0].type.split("/")[0] === "" ? "other" : fileType[0].type.split("/")[0]}}</div>
+        <mat-list-item *ngFor="let file of fileType">
+          <mat-icon mat-list-icon>insert_drive_file</mat-icon>
+          <div mat-line>{{file.name}}</div>
+          <div mat-line>{{file.size / 1000000| number:'1.2-2'}} MB</div>
+        </mat-list-item>
+      </div>
+    </mat-list>
+  </div>
+</div>

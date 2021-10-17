@@ -1,0 +1,8 @@
+.file-picker{
+  margin-top: 16px;
+}
+
+.file-picker-header{
+  display: flex;
+  justify-content: space-evenly;
+}

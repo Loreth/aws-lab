@@ -14,7 +14,13 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRippleModule} from "@angular/material/core";
-import { BucketArchiveComponent } from './components/bucket/bucket-archive/bucket-archive.component';
+import {BucketArchiveComponent} from './components/bucket/bucket-archive/bucket-archive.component';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -25,17 +31,24 @@ import { BucketArchiveComponent } from './components/bucket/bucket-archive/bucke
     BucketPickerComponent,
     BucketArchiveComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        RouterModule,
-        AppRoutingModule,
-        HttpClientModule,
-        MatTableModule,
-        MatCheckboxModule,
-        MatRippleModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    RouterModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatRippleModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSnackBarModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

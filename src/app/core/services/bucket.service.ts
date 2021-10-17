@@ -20,4 +20,10 @@ export class BucketService {
   getS3Objects(bucketName: string): Observable<S3Object[]> {
     return this.http.get<S3Object[]>(getEndpointUrl(BUCKET) + '/' + bucketName);
   }
+
+  postS3Objects(bucketName: string, files: File[]): Observable<S3Object[]> {
+    const formData = new FormData();
+    files.forEach(f => formData.append("fileList", f));
+    return this.http.post<S3Object[]>(getEndpointUrl(BUCKET) + '/' + bucketName, formData);
+  }
 }
