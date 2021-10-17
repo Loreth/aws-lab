@@ -22,6 +22,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSidenavModule} from "@angular/material/sidenav";
+import { Ec2BrowserComponent } from './components/ec2/ec2-browser/ec2-browser.component';
+import { Ec2InstanceComponent } from './components/ec2/ec2-instance/ec2-instance.component';
+import {MatCardModule} from "@angular/material/card";
+import { Ec2InstanceCreatorComponent } from './components/ec2/ec2-instance-creator/ec2-instance-creator.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+
 
 
 @NgModule({
@@ -31,7 +37,10 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     HeaderComponent,
     BucketBrowserComponent,
     BucketPickerComponent,
-    BucketArchiveComponent
+    BucketArchiveComponent,
+    Ec2BrowserComponent,
+    Ec2InstanceComponent,
+    Ec2InstanceCreatorComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +59,9 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

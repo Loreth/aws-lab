@@ -1,0 +1,8 @@
+<form>
+  <mat-form-field>
+    <mat-label>New instance name</mat-label>
+    <input matInput [(ngModel)]="instanceName" name="instanceName">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="emitCreateRequest()">Create</button>
+</form>
+

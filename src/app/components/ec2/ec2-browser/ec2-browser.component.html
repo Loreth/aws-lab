@@ -1,0 +1,8 @@
+<h1>EC2 instances</h1>
+<app-ec2-instance-creator (onCreateRequest)="createInstance($event)"></app-ec2-instance-creator>
+<app-ec2-instance *ngFor="let instance of (instances$ | async)"
+                  [instance]="instance"
+                  (stopInstance)="stopInstance($event)"
+                  (startInstance)="startInstance($event)"
+                  (terminateInstance)="terminateInstance($event)">
+</app-ec2-instance>
