@@ -32,7 +32,7 @@
 
       <ng-container matColumnDef="size">
         <mat-header-cell *matHeaderCellDef>Rozmiar [KB]</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.size / 1024 | number: '1.2-2'}}</mat-cell>
+        <mat-cell *matCellDef="let element">{{element.sizeBytes / 1024 | number: '1.2-2'}}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="lastModified">
