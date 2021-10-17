@@ -1,0 +1,24 @@
+.s3object-table {
+  width: 100%;
+}
+
+.bucket-objects-panel {
+  margin-top: 16px;
+}
+
+.mat-column-no {
+  flex: 0 0 80px
+}
+
+.mat-column-size {
+  flex: 0 0 15%
+}
+
+.mat-column-lastModified {
+  flex: 0 0 220px
+}
+
+.mat-column-download {
+  flex: 0 0 80px;
+}
+

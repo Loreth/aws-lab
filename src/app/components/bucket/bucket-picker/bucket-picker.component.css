@@ -1,0 +1,16 @@
+.bucket-table {
+  width: 100%;
+}
+
+.mat-row .mat-cell {
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.selected-bucket-row {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+}
