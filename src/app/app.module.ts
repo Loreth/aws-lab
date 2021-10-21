@@ -27,7 +27,7 @@ import { Ec2InstanceComponent } from './components/ec2/ec2-instance/ec2-instance
 import {MatCardModule} from "@angular/material/card";
 import { Ec2InstanceCreatorComponent } from './components/ec2/ec2-instance-creator/ec2-instance-creator.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
-
+import { PollyComponent } from './components/polly/polly/polly.component';
 
 
 @NgModule({
@@ -40,7 +40,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     BucketArchiveComponent,
     Ec2InstanceComponent,
     Ec2BrowserComponent,
-    Ec2InstanceCreatorComponent
+    Ec2InstanceCreatorComponent,
+    PollyComponent
   ],
   imports: [
     BrowserModule,
