@@ -29,6 +29,8 @@ import { Ec2InstanceCreatorComponent } from './components/ec2/ec2-instance-creat
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { PollyComponent } from './components/polly/polly/polly.component';
 import {MatSelectModule} from "@angular/material/select";
+import { ComprehendSentimentComponent } from './components/comprehend-sentiment/comprehend-sentiment/comprehend-sentiment.component';
+import { ComprehendSentimentResultComponent } from './components/comprehend-sentiment/comprehend-sentiment-result/comprehend-sentiment-result.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import {MatSelectModule} from "@angular/material/select";
     Ec2InstanceComponent,
     Ec2BrowserComponent,
     Ec2InstanceCreatorComponent,
-    PollyComponent
+    PollyComponent,
+    ComprehendSentimentComponent,
+    ComprehendSentimentResultComponent
   ],
   imports: [
     BrowserModule,

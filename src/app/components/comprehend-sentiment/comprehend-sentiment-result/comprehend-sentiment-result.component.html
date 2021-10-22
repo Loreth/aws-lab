@@ -1,0 +1,18 @@
+<div *ngIf="sentimentResult !== null">
+  <div>
+    <span>Neutral: </span>
+    <span>{{sentimentResult.neutral}}</span>
+  </div>
+  <div>
+    <span>Mixed: </span>
+    <span>{{sentimentResult.mixed}}</span>
+  </div>
+  <div>
+    <span>Negative: </span>
+    <span>{{sentimentResult.negative}}</span>
+  </div>
+  <div>
+    <span>Positive: </span>
+    <span>{{sentimentResult.positive}}</span>
+  </div>
+</div>

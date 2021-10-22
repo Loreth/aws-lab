@@ -1,0 +1,9 @@
+<h1>Comprehend - analiza sentymentu</h1>
+<mat-form-field>
+  <mat-label>Tekst do analizy</mat-label>
+  <textarea matInput [(ngModel)]="textToAnalyze"></textarea>
+</mat-form-field>
+<div></div>
+<button mat-raised-button color="primary" (click)="detectSentiment()">Analizuj</button>
+
+<app-comprehend-sentiment-result [sentimentResult]="sentiment$ | async"></app-comprehend-sentiment-result>
