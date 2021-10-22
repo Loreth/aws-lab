@@ -4,18 +4,17 @@ import {Observable} from "rxjs";
 import {getEndpointUrl, POLLY} from "../../shared/rest-api-urls";
 import {VoiceResponse} from "../../shared/model/polly/VoiceResponse";
 import {GenerateSpeechRequest} from "../../shared/model/polly/GenerateSpeechRequest";
-import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
-export class Ec2Service {
+export class PollyService {
 
   constructor(private http: HttpClient) {
   }
 
   getLanguages(): Observable<string[]> {
-    const url = `${getEndpointUrl(POLLY)}/languages}`;
+    const url = `${getEndpointUrl(POLLY)}/languages`;
     return this.http.get<string[]>(url);
   }
 
@@ -24,8 +23,8 @@ export class Ec2Service {
     return this.http.get<VoiceResponse[]>(url);
   }
 
-  getSpeech(request: GenerateSpeechRequest): Observable<Blob> {
+  getSpeech(request: GenerateSpeechRequest): Observable<ArrayBuffer> {
     const url = `${getEndpointUrl(POLLY)}/generate`;
-    return this.http.post(url, request, {responseType: "blob"});
+    return this.http.put(url, request, {responseType: "arraybuffer"});
   }
 }

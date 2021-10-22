@@ -28,6 +28,7 @@ import {MatCardModule} from "@angular/material/card";
 import { Ec2InstanceCreatorComponent } from './components/ec2/ec2-instance-creator/ec2-instance-creator.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { PollyComponent } from './components/polly/polly/polly.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { PollyComponent } from './components/polly/polly/polly.component';
     MatSidenavModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
