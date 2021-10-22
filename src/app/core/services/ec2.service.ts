@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Ec2Instance, Ec2InstanceResponse} from "../../components/ec2/data/Ec2Instance";
+import {Ec2Instance, Ec2InstanceResponse} from "../../shared/model/ec2/Ec2Instance";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {EC2, getEndpointUrl} from "../../shared/rest-api-urls";
@@ -9,7 +9,7 @@ import {
   Ec2StartRequest,
   Ec2StopRequest,
   Ec2TerminateRequest
-} from "../../components/ec2/data/Ec2Requests";
+} from "../../shared/model/ec2/Ec2Requests";
 
 @Injectable({
   providedIn: 'root'

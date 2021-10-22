@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {Ec2CreateRequest} from "../data/Ec2Requests";
+import {Ec2CreateRequest} from "../../../shared/model/ec2/Ec2Requests";
 
 @Component({
   selector: 'app-ec2-instance-creator',

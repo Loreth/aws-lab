@@ -1,0 +1,27 @@
+<h1>Polly: text to speech</h1>
+<div>
+  <mat-form-field>
+    <mat-label>Language</mat-label>
+    <mat-select (selectionChange)="handleLanguageChange($event)">
+      <mat-option *ngFor="let language of languages$ | async" [value]="language">{{language}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Voice</mat-label>
+    <mat-select (selectionChange)="handleVoiceIdChange($event)">
+      <mat-option *ngFor="let voice of voices$ | async" [value]="voice.id">{{voice.name}} ({{voice.gender}})</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field>
+    <mat-label>Text</mat-label>
+    <textarea matInput placeholder="Input your text here" [(ngModel)]="text"></textarea>
+  </mat-form-field>
+</div>
+<div>
+  <button mat-raised-button (click)="generateSpeech()">Generate speech</button>
+</div>
+<div *ngIf="speech !== undefined">
+  <audio #audioElement [srcObject]=""></audio>
+</div>

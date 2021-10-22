@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Ec2Instance} from "../data/Ec2Instance";
+import {Ec2Instance} from "../../../shared/model/ec2/Ec2Instance";
 import {Observable} from "rxjs";
 import {Ec2Service} from "../../../core/services/ec2.service";
-import {Ec2CreateRequest, Ec2StartRequest, Ec2StopRequest, Ec2TerminateRequest} from "../data/Ec2Requests";
+import {Ec2CreateRequest, Ec2StartRequest, Ec2StopRequest, Ec2TerminateRequest} from "../../../shared/model/ec2/Ec2Requests";
 
 @Component({
   selector: 'app-ec2-browser',
