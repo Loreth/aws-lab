@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Bucket} from '../../../shared/model/bucket';
+import {Bucket} from '../../../shared/model/s3/bucket';
 import {tap} from 'rxjs/operators';
 import {from, Observable} from 'rxjs';
-import {S3Object} from '../../../shared/model/s3Object';
+import {S3Object} from '../../../shared/model/s3/s3Object';
 import {BucketService} from '../../../core/services/bucket.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
