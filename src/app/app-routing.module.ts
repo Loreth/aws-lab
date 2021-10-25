@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'ec2-browser', component: Ec2BrowserComponent},
   {path: 'polly', component: PollyComponent},
   {path: 'comprehend-sentiment', component: ComprehendSentimentComponent},
-  {path: 'translation', component: TranslationComponent}
+  {path: 'translation', component: TranslationComponent},
   {path: 'rekognition-labeling', component: RekognitionLabelingComponent},
   {path: 'textract-ocr', component: TextractOcrComponent}
 ]

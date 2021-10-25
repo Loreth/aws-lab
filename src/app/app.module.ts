@@ -50,7 +50,7 @@ import { TextractOcrComponent } from './components/textract-ocr/textract-ocr.com
     PollyComponent,
     ComprehendSentimentComponent,
     ComprehendSentimentResultComponent,
-    TranslationComponent
+    TranslationComponent,
     RekognitionLabelingComponent,
     TextractOcrComponent
   ],
