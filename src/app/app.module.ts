@@ -31,6 +31,7 @@ import { PollyComponent } from './components/polly/polly/polly.component';
 import {MatSelectModule} from "@angular/material/select";
 import { ComprehendSentimentComponent } from './components/comprehend-sentiment/comprehend-sentiment/comprehend-sentiment.component';
 import { ComprehendSentimentResultComponent } from './components/comprehend-sentiment/comprehend-sentiment-result/comprehend-sentiment-result.component';
+import { TranslationComponent } from './components/translation/translation.component';
 import { RekognitionLabelingComponent } from './components/rekognition-labeling/rekognition-labeling.component';
 import { TextractOcrComponent } from './components/textract-ocr/textract-ocr.component';
 
@@ -49,6 +50,7 @@ import { TextractOcrComponent } from './components/textract-ocr/textract-ocr.com
     PollyComponent,
     ComprehendSentimentComponent,
     ComprehendSentimentResultComponent,
+    TranslationComponent
     RekognitionLabelingComponent,
     TextractOcrComponent
   ],
