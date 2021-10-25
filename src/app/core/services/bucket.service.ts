@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Bucket} from "../../shared/model/bucket";
+import {Bucket} from "../../shared/model/s3/bucket";
 import {BUCKET, getEndpointUrl} from "../../shared/rest-api-urls";
-import {S3Object} from "../../shared/model/s3Object";
+import {S3Object} from "../../shared/model/s3/s3Object";
 
 @Injectable({
   providedIn: 'root'

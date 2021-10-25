@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {Bucket} from "../../../shared/model/bucket";
-import {S3Object} from "../../../shared/model/s3Object";
+import {Bucket} from "../../../shared/model/s3/bucket";
+import {S3Object} from "../../../shared/model/s3/s3Object";
 import {from, Observable} from "rxjs";
 import {tap} from "rxjs/operators";
 import {BucketService} from "../../../core/services/bucket.service";

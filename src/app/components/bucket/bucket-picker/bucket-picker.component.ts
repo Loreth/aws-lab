@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Observable} from "rxjs";
-import {Bucket} from "../../../shared/model/bucket";
+import {Bucket} from "../../../shared/model/s3/bucket";
 import {BucketService} from "../../../core/services/bucket.service";
 
 @Component({

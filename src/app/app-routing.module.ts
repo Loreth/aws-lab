@@ -7,6 +7,8 @@ import {Ec2BrowserComponent} from './components/ec2/ec2-browser/ec2-browser.comp
 import {PollyComponent} from "./components/polly/polly/polly.component";
 import {ComprehendSentimentComponent} from "./components/comprehend-sentiment/comprehend-sentiment/comprehend-sentiment.component";
 import {TranslationComponent} from './components/translation/translation.component';
+import {RekognitionLabelingComponent} from "./components/rekognition-labeling/rekognition-labeling.component";
+import {TextractOcrComponent} from "./components/textract-ocr/textract-ocr.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'admin-panel', pathMatch: 'full'},
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path: 'polly', component: PollyComponent},
   {path: 'comprehend-sentiment', component: ComprehendSentimentComponent},
   {path: 'translation', component: TranslationComponent}
+  {path: 'rekognition-labeling', component: RekognitionLabelingComponent},
+  {path: 'textract-ocr', component: TextractOcrComponent}
 ]
 
 @NgModule({
