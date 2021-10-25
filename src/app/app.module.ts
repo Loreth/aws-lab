@@ -31,6 +31,7 @@ import { PollyComponent } from './components/polly/polly/polly.component';
 import {MatSelectModule} from "@angular/material/select";
 import { ComprehendSentimentComponent } from './components/comprehend-sentiment/comprehend-sentiment/comprehend-sentiment.component';
 import { ComprehendSentimentResultComponent } from './components/comprehend-sentiment/comprehend-sentiment-result/comprehend-sentiment-result.component';
+import { TranslationComponent } from './components/translation/translation.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ComprehendSentimentResultComponent } from './components/comprehend-sent
     Ec2InstanceCreatorComponent,
     PollyComponent,
     ComprehendSentimentComponent,
-    ComprehendSentimentResultComponent
+    ComprehendSentimentResultComponent,
+    TranslationComponent
   ],
   imports: [
     BrowserModule,
