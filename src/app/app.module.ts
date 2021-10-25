@@ -31,6 +31,8 @@ import { PollyComponent } from './components/polly/polly/polly.component';
 import {MatSelectModule} from "@angular/material/select";
 import { ComprehendSentimentComponent } from './components/comprehend-sentiment/comprehend-sentiment/comprehend-sentiment.component';
 import { ComprehendSentimentResultComponent } from './components/comprehend-sentiment/comprehend-sentiment-result/comprehend-sentiment-result.component';
+import { RekognitionLabelingComponent } from './components/rekognition-labeling/rekognition-labeling.component';
+import { TextractOcrComponent } from './components/textract-ocr/textract-ocr.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { ComprehendSentimentResultComponent } from './components/comprehend-sent
     Ec2InstanceCreatorComponent,
     PollyComponent,
     ComprehendSentimentComponent,
-    ComprehendSentimentResultComponent
+    ComprehendSentimentResultComponent,
+    RekognitionLabelingComponent,
+    TextractOcrComponent
   ],
   imports: [
     BrowserModule,

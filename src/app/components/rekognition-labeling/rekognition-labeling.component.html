@@ -1,0 +1,19 @@
+<h3>Wybierz zdjęcie do zetykietowania:</h3>
+<div>
+  <input type="file" (change)="onImageSelected($event)" accept="image/*">
+</div>
+<div class="image-and-labels-panel">
+  <img *ngIf="imageFile" src="{{imageUrl}}" alt="dodane zdjęcie" class="uploaded-image">
+  <mat-list>
+    <div *ngFor="let imageLabel of imageLabels$ | async">
+      <mat-list-item>
+        {{imageLabel.name}} {{imageLabel.confidence | number:'2.2-2'}}%
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list>
+</div>
+<div>
+  <button mat-raised-button color="primary" *ngIf="imageFile" (click)="labelImage()">Wygeneruj etykiety</button>
+</div>
+

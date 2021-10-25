@@ -1,0 +1,14 @@
+<h3>Wybierz plik z tekstem do wykrycia:</h3>
+<div>
+  <input type="file" (change)="onFileSelected($event)" accept="image/png, image/jpeg">
+</div>
+<div class="image-and-text-panel">
+  <img *ngIf="imageUrl" src="{{imageUrl}}" alt="dodane zdjęcie" class="uploaded-image">
+  <div *ngIf="detectedText$ | async as detectedText">
+    <h3>Wykryty tekst:</h3>
+    {{detectedText}}
+  </div>
+</div>
+<div>
+  <button mat-raised-button color="primary" *ngIf="documentFile" (click)="detectText()">Wykryj tekst</button>
+</div>
