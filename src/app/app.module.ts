@@ -32,6 +32,7 @@ import {MatSelectModule} from "@angular/material/select";
 import { ComprehendSentimentComponent } from './components/comprehend-sentiment/comprehend-sentiment/comprehend-sentiment.component';
 import { ComprehendSentimentResultComponent } from './components/comprehend-sentiment/comprehend-sentiment-result/comprehend-sentiment-result.component';
 import { RekognitionLabelingComponent } from './components/rekognition-labeling/rekognition-labeling.component';
+import { TextractOcrComponent } from './components/textract-ocr/textract-ocr.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { RekognitionLabelingComponent } from './components/rekognition-labeling/
     PollyComponent,
     ComprehendSentimentComponent,
     ComprehendSentimentResultComponent,
-    RekognitionLabelingComponent
+    RekognitionLabelingComponent,
+    TextractOcrComponent
   ],
   imports: [
     BrowserModule,
