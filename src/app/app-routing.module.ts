@@ -26,7 +26,8 @@ const routes: Routes = [
       {path: 'rekognition-labeling', component: RekognitionLabelingComponent},
       {path: 'textract-ocr', component: TextractOcrComponent}
     ]
-  }
+  },
+  {path: '**', redirectTo: ''},
 ]
 
 @NgModule({
