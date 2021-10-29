@@ -9,18 +9,24 @@ import {ComprehendSentimentComponent} from "./components/comprehend-sentiment/co
 import {TranslationComponent} from './components/translation/translation.component';
 import {RekognitionLabelingComponent} from "./components/rekognition-labeling/rekognition-labeling.component";
 import {TextractOcrComponent} from "./components/textract-ocr/textract-ocr.component";
+import {LoginComponent} from "./components/login/login.component";
+import {AlreadyLoggedGuard} from "./core/guards/already-logged.guard";
+import {AuthGuard} from "./core/guards/auth.guard";
 
 const routes: Routes = [
-  {path: '', redirectTo: 'admin-panel', pathMatch: 'full'},
-  {path: '', component: AdminPanelComponent},
-  {path: 'bucket-browser', component: BucketBrowserComponent},
-  {path: 'bucket-archive', component: BucketArchiveComponent},
-  {path: 'ec2-browser', component: Ec2BrowserComponent},
-  {path: 'polly', component: PollyComponent},
-  {path: 'comprehend-sentiment', component: ComprehendSentimentComponent},
-  {path: 'translation', component: TranslationComponent},
-  {path: 'rekognition-labeling', component: RekognitionLabelingComponent},
-  {path: 'textract-ocr', component: TextractOcrComponent}
+  {path: 'login', component: LoginComponent, canActivate: [AlreadyLoggedGuard]},
+  {
+    path: '', component: AdminPanelComponent, canActivate: [AuthGuard], children: [
+      {path: 'bucket-browser', component: BucketBrowserComponent},
+      {path: 'bucket-archive', component: BucketArchiveComponent},
+      {path: 'ec2-browser', component: Ec2BrowserComponent},
+      {path: 'polly', component: PollyComponent},
+      {path: 'comprehend-sentiment', component: ComprehendSentimentComponent},
+      {path: 'translation', component: TranslationComponent},
+      {path: 'rekognition-labeling', component: RekognitionLabelingComponent},
+      {path: 'textract-ocr', component: TextractOcrComponent}
+    ]
+  }
 ]
 
 @NgModule({

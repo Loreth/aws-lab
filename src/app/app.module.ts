@@ -22,20 +22,23 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSidenavModule} from "@angular/material/sidenav";
-import { Ec2BrowserComponent } from './components/ec2/ec2-browser/ec2-browser.component';
-import { Ec2InstanceComponent } from './components/ec2/ec2-instance/ec2-instance.component';
+import {Ec2BrowserComponent} from './components/ec2/ec2-browser/ec2-browser.component';
+import {Ec2InstanceComponent} from './components/ec2/ec2-instance/ec2-instance.component';
 import {MatCardModule} from "@angular/material/card";
-import { Ec2InstanceCreatorComponent } from './components/ec2/ec2-instance-creator/ec2-instance-creator.component';
+import {Ec2InstanceCreatorComponent} from './components/ec2/ec2-instance-creator/ec2-instance-creator.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
-import { PollyComponent } from './components/polly/polly/polly.component';
+import {PollyComponent} from './components/polly/polly/polly.component';
 import {MatSelectModule} from "@angular/material/select";
-import { ComprehendSentimentComponent } from './components/comprehend-sentiment/comprehend-sentiment/comprehend-sentiment.component';
-import { ComprehendSentimentResultComponent } from './components/comprehend-sentiment/comprehend-sentiment-result/comprehend-sentiment-result.component';
-import { TranslationComponent } from './components/translation/translation.component';
-import { RekognitionLabelingComponent } from './components/rekognition-labeling/rekognition-labeling.component';
-import { TextractOcrComponent } from './components/textract-ocr/textract-ocr.component';
+import {ComprehendSentimentComponent} from './components/comprehend-sentiment/comprehend-sentiment/comprehend-sentiment.component';
+import {ComprehendSentimentResultComponent} from './components/comprehend-sentiment/comprehend-sentiment-result/comprehend-sentiment-result.component';
+import {TranslationComponent} from './components/translation/translation.component';
+import {RekognitionLabelingComponent} from './components/rekognition-labeling/rekognition-labeling.component';
+import {TextractOcrComponent} from './components/textract-ocr/textract-ocr.component';
 import {LoggingInterceptor} from "./core/services/logging.interceptor";
-
+import {JwtModule} from "@auth0/angular-jwt";
+import {ErrorInterceptor} from "./core/services/error.interceptor";
+import {AuthService} from "./core/services/auth.service";
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -53,9 +56,13 @@ import {LoggingInterceptor} from "./core/services/logging.interceptor";
     ComprehendSentimentResultComponent,
     TranslationComponent,
     RekognitionLabelingComponent,
-    TextractOcrComponent
+    TextractOcrComponent,
+    LoginComponent
   ],
   imports: [
+    JwtModule.forRoot({
+      config: {tokenGetter: AuthService.getToken, allowedDomains: ["localhost:8080"]}
+    }),
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -78,11 +85,8 @@ import {LoggingInterceptor} from "./core/services/logging.interceptor";
     MatSelectModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoggingInterceptor,
-      multi: true
-    }
+    {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]
 })
