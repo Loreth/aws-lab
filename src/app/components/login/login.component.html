@@ -1,0 +1,30 @@
+<div class="login-panel">
+  <h1 class="panel-header">Panel administracyjny AWS</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Nazwa użytkownika</mat-label>
+      <input matInput formControlName="username" name="username">
+      <mat-icon matPrefix>person_outline</mat-icon>
+      <mat-error *ngIf="username?.errors?.required">
+        Nazwa użytkownika {{requiredMessage}}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Hasło</mat-label>
+      <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'">
+      <mat-icon matPrefix>lock_outlined</mat-icon>
+      <button type="button"
+              mat-icon-button matSuffix
+              (click)="hidePassword = !hidePassword">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password?.errors?.required">
+        Hasło {{requiredMessage}}
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" class="login-button" mat-raised-button color="accent">
+      Zaloguj się
+      <mat-icon>login</mat-icon>
+    </button>
+  </form>
+</div>
