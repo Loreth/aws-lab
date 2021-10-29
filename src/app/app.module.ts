@@ -10,7 +10,7 @@ import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from './app-routing.module';
 import {BucketBrowserComponent} from './components/bucket/bucket-browser/bucket-browser.component';
 import {BucketPickerComponent} from './components/bucket/bucket-picker/bucket-picker.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRippleModule} from "@angular/material/core";
@@ -34,6 +34,7 @@ import { ComprehendSentimentResultComponent } from './components/comprehend-sent
 import { TranslationComponent } from './components/translation/translation.component';
 import { RekognitionLabelingComponent } from './components/rekognition-labeling/rekognition-labeling.component';
 import { TextractOcrComponent } from './components/textract-ocr/textract-ocr.component';
+import {LoggingInterceptor} from "./core/services/logging.interceptor";
 
 
 @NgModule({
@@ -76,7 +77,13 @@ import { TextractOcrComponent } from './components/textract-ocr/textract-ocr.com
     MatCardModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
