@@ -19,5 +19,6 @@ export class LoggingService {
 
   addLogEntry(entry: LogEntry) {
     // this.http.post()
+    console.log(entry);
   }
 }
