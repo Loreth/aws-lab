@@ -49,8 +49,6 @@ export class PollyComponent implements OnInit {
       const source = audioContext.createBufferSource();
       source.buffer = this.speech;
       source.connect(audioContext.destination);
-
-      console.log(source);
       source.start();
     }
   }
