@@ -8,8 +8,6 @@ export interface LogEntry {
   readonly url: string;
   readonly method: string;
   readonly body: any;
-  readonly userId: number;
-  readonly userName: string;
 }
 
 @Injectable({

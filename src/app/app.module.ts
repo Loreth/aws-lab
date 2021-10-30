@@ -34,9 +34,9 @@ import {ComprehendSentimentResultComponent} from './components/comprehend-sentim
 import {TranslationComponent} from './components/translation/translation.component';
 import {RekognitionLabelingComponent} from './components/rekognition-labeling/rekognition-labeling.component';
 import {TextractOcrComponent} from './components/textract-ocr/textract-ocr.component';
-import {LoggingInterceptor} from "./core/services/logging.interceptor";
+import {LoggingInterceptor} from "./core/interceptors/logging.interceptor";
 import {JwtModule} from "@auth0/angular-jwt";
-import {ErrorInterceptor} from "./core/services/error.interceptor";
+import {ErrorInterceptor} from "./core/interceptors/error.interceptor";
 import {AuthService} from "./core/services/auth.service";
 import { LoginComponent } from './components/login/login.component';
 
