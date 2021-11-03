@@ -12,6 +12,7 @@ import {TextractOcrComponent} from "./components/textract-ocr/textract-ocr.compo
 import {LoginComponent} from "./components/login/login.component";
 import {AlreadyLoggedGuard} from "./core/guards/already-logged.guard";
 import {AuthGuard} from "./core/guards/auth.guard";
+import {LogsComponent} from './components/logs/logs.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: [AlreadyLoggedGuard]},
@@ -24,7 +25,8 @@ const routes: Routes = [
       {path: 'comprehend-sentiment', component: ComprehendSentimentComponent},
       {path: 'translation', component: TranslationComponent},
       {path: 'rekognition-labeling', component: RekognitionLabelingComponent},
-      {path: 'textract-ocr', component: TextractOcrComponent}
+      {path: 'textract-ocr', component: TextractOcrComponent},
+      {path: 'logs', component: LogsComponent}
     ]
   },
   {path: '**', redirectTo: ''},

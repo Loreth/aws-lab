@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+}
+
+.filter-input{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.filter-button{
+  height: min-content;
+}
