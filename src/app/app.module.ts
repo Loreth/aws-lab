@@ -13,7 +13,7 @@ import {BucketPickerComponent} from './components/bucket/bucket-picker/bucket-pi
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatRippleModule} from "@angular/material/core";
+import {MatRippleModule, MatNativeDateModule } from "@angular/material/core";
 import {BucketArchiveComponent} from './components/bucket/bucket-archive/bucket-archive.component';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -39,6 +39,9 @@ import {JwtModule} from "@auth0/angular-jwt";
 import {ErrorInterceptor} from "./core/interceptors/error.interceptor";
 import {AuthService} from "./core/services/auth.service";
 import { LoginComponent } from './components/login/login.component';
+import { LogsComponent } from './components/logs/logs.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,8 @@ import { LoginComponent } from './components/login/login.component';
     TranslationComponent,
     RekognitionLabelingComponent,
     TextractOcrComponent,
-    LoginComponent
+    LoginComponent,
+    LogsComponent
   ],
   imports: [
     JwtModule.forRoot({
@@ -82,11 +86,14 @@ import { LoginComponent } from './components/login/login.component';
     MatSnackBarModule,
     MatFormFieldModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: DatePipe, useClass: DatePipe}
   ],
   bootstrap: [AppComponent]
 })
